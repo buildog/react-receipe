@@ -1,0 +1,122 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,100|Raleway:400,500,600,700);
+
+@value small as bp-small, large as bp-large from "./breakpoints.css";
+
+
+
+html,
+body,
+#app{
+	height:100%;
+	min-height: 100%;
+	margin:0;
+	padding:0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  transition:0.2s ease;
+}
+
+
+.root {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color:#808081; 
+}
+
+
+.body {
+    background: #FFF;
+    /* footer reveal */
+    position: relative;
+    top:0px;
+    z-index: 1;
+    min-height: 100%;
+    margin-bottom: 150px; 
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2)
+}
+
+
+/* LINKS */
+
+a, .logo{
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: -0.01rem
+}
+
+.rounded{
+    font-weight:600;
+    text-decoration:none;
+    color:#7332ea;
+    border:2px solid #7332ea;
+    border-radius:30px;
+    padding:25px 35px;
+    border-radius:60px;
+    display:inline-block;
+    margin:15px 0px;
+    font-size:1.2rem
+}
+
+.roundedWhite{
+    composes:rounded;
+    color:#FFF;
+    background:#7332ea;
+    border-color:#7332ea;
+}
+
+.roundedBlack{
+    composes:rounded;
+    color:#fff;
+    border:2px solid #000;
+    background-color: #000;
+}
+
+
+
+/* HEADINGS & TXT */
+
+h1,
+h2,
+h3,
+h4{
+  text-align: inherit;
+}
+
+h1,
+h2{
+  letter-spacing:-0.1rem
+}
+
+h3{ 
+  text-align:center;
+  margin:0;
+  font-size:3rem;
+  font-weight:400;
+  color:#000
+}
+
+
+h4,
+h5{
+  margin:0;
+  color:#000;
+}
+
+h4{
+  font-size:2.2rem;
+  font-weight: 600;
+  line-height: 2rem
+}
+
+h5{
+  font-weight:100;
+  font-size:2rem;
+  opacity:0.8
+}
+
+strong{
+  font-weight: 600
+}

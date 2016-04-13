@@ -1,0 +1,12 @@
+prod:
+    image: reactjs_web
+    command: npm run prod:deploy
+    volumes:
+        - src:/reactjs/src
+        - bin/server:/reactjs/bin/server
+    ports:
+        - "8082:8082"
+    environment:
+        COMPOSE_PROJECT_NAME: isomorphic_react_dev
+        NODE_ENV: production
+        PORT: "8082"
