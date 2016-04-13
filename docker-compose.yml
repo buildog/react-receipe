@@ -1,5 +1,5 @@
 web:
-    build: .
+    build: reactjs_web
     volumes:
         - src:/reactjs/src
     ports:
