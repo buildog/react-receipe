@@ -5,6 +5,7 @@ var customServerRendering = require("../../public/server.bundle.js");
 //console.log(customServerRendering);
 var server = express();
 const port = process.env.PORT || 8080;
+const ip = process.env.IP || "0.0.0.0";
 
 //Un article intéressant sur les différents avantages du server side rendering par
 //rapport au client side notamment en terme de temps de chargement et consommation de bande passante:
