@@ -7,6 +7,7 @@ var server = express();
 //est définit par défaut via process.env, auquel cas on définit par défault
 //le port à 8080:
 const port = process.env.PORT || 8080;
+const ip = process.env.IP || "0.0.0.0";
 
 //On utilise compression() qui est un middleware permettant de compresser les réponses serveurs
 //en gzip ou deflate, ou aucune compression suivant ce que le client web peut accepter (le client le spécifie
@@ -24,7 +25,7 @@ server.get("*", function(req, res) {
 });
 
 //TODO: utiliser an http api pour logguer les GET, POST...:
-server.listen(port, function() {
+server.listen(port, ip, function() {
 	var host = this.address().address;
 	console.log("Server launched at http://%s:%s", host, port);
 });

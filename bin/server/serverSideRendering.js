@@ -27,7 +27,7 @@ server.use(function(req, res) {
 });
 
 //TODO: utiliser an http api pour logguer les GET, POST...:
-server.listen(port, function() {
+server.listen(port, ip, function() {
 	var host = this.address().address;
 	console.log("Server launched at http://%s:%s", host, port);
 });

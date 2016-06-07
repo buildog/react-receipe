@@ -5,13 +5,14 @@ var path = require("path");
 var BUILD_DIR = path.resolve(__dirname, "..", "public");
 var APP_DIR = path.resolve(__dirname, "..", "src");
 const port = process.env.PORT || 8080;
+const HMR = process.env.HMR || "0.0.0.0";
 
 
 var webpackDevConfig = {
 	//Fichier d"entrée où toutes les dépendances et ressources à inclure
 	//seront cherchées récursivement:
 	entry: [
-		"webpack-dev-server/client?http://0.0.0.0:"+port, //WebpackDevServer host et port
+		"webpack-dev-server/client?http://"+HMR+":"+port, //WebpackDevServer host et port
 		"webpack/hot/only-dev-server", //"only" permet d"empêcher le rechargement lors d"erreurs de syntaxes
 		//fichier d"entrée principale de notre code source (client et non client.jsx comme le dossier
 		//contient index.jsx donc automatiquement loadé lorsque l"on spécifie le dossier):
@@ -49,7 +50,7 @@ var webpackDevConfig = {
 				//(si plusieurs loaders, mettre loaders: [] au lieu de loader:)
 		        test: /\.jsx?$/,
 		        exclude: /(node_modules|bower_components)/,
-		        loader: 'babel', // 'babel-loader' is also a legal name to reference 
+		        loader: 'babel', // 'babel-loader' is also a legal name to reference
 		        query: {
 		          presets: ['react', 'es2015'],
 		          env: {
