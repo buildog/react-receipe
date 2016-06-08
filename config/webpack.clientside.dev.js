@@ -37,6 +37,10 @@ var webpackDevConfig = {
 		//au-dessus de public (comme auparavant) on aurait setté publicPath à "/public/")
 		publicPath: "/"
 	},
+	 watchOptions: {
+	    poll: 1000,
+	    aggregateTimeout: 1000
+	},
 	module: {
 		//Pour plus de détails sur comment fonctionne la
 		//configuration webpack: https://webpack.github.io/docs/configuration.html
