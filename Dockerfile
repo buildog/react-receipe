@@ -11,8 +11,3 @@ RUN npm install -g concurrently
 
 # copy the source and build
 COPY . /reactjs
-
-# add user and transfer ownership
-RUN useradd -d /reactjs root \
-	&& chown -R root:root /reactjs \
-	&& chmod -R g+rw /reactjs
