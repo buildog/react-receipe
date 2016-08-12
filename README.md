@@ -2,10 +2,8 @@ React sauce CSS modulaire, sur son lit d'outils webpack
 ===================
  
 
-Comme une bonne pièce de boeuf avec le Syrah, ReactJS exprime toute sa puissance quand il est  associé au CSS modulaire, pour réaliser cette accord, on utilisera webpack et express. 
 
-
-> **La popote:**
+> **features:**
 
 > - Environnement de **dev HRM**
 > - Environnement de **production isomorphique**.
