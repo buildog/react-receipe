@@ -53,7 +53,12 @@
 		"express": "^4.13.4",
 		"react": "^0.14.7",
 		"react-dom": "^0.14.7",
-		"react-router": "^2.0.0"
+		"react-router": "^2.0.0",
+		"feathers" : "*",
+		"feathers-socketio" :"*",
+		"feathers-hooks" :"*",
+		"socket.io-client" :"*",
+		"feathers-authentication" :"*" 
 	},
 	"babel": {
 		"presets": [
