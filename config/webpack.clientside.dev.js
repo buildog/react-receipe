@@ -97,6 +97,10 @@ var webpackDevConfig = {
 				//loader:"file-loader?name=[path]/[name].[ext]"
 			},
 			{
+				test: /\.mp4$/,
+	 			loader: 'file-loader?limit=10000&mimetype=video/mp4'
+			},
+			{
 				//HTML Loader:
 				test: /\.html$/,
 				loader: "file-loader?name=[name].[ext]"

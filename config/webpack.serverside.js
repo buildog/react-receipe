@@ -54,6 +54,10 @@ var webpackServerSideConfig = {
 				loader: "file-loader?name=img/[name].[ext]"
 			},
 			{
+				test: /\.mp4$/,
+	 			loader: 'file-loader?limit=10000&mimetype=video/mp4'
+			},
+			{
 				test: /\.html$/,
 				loader: "file-loader?name=[name].[ext]"
 			},
