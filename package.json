@@ -46,7 +46,8 @@
 		"webpack": "^1.12.13",
 		"webpack-dev-server": "^1.14.1",
 		"react-motion":"latest",
-		"react-headroom":"latest"
+		"react-headroom": "latest",
+		"react-youtube": "latest"
 	},
 	"dependencies": {
 		"compression": "^1.6.1",
@@ -58,7 +59,7 @@
 		"feathers-socketio" :"*",
 		"feathers-hooks" :"*",
 		"socket.io-client" :"*",
-		"feathers-authentication" :"*" 
+		"feathers-authentication" :"*"
 	},
 	"babel": {
 		"presets": [
