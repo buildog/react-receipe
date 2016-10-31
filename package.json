@@ -47,7 +47,8 @@
 		"webpack-dev-server": "^1.14.1",
 		"react-motion":"latest",
 		"react-headroom": "latest",
-		"react-youtube": "latest"
+		"react-youtube": "latest",
+		"siriwavejs": "^2.0.1"
 	},
 	"dependencies": {
 		"compression": "^1.6.1",
