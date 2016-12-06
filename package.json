@@ -72,7 +72,8 @@
     "react": "^15.0.0-rc",
     "react-dom": "^15.0.0-rc",
     "react-router": "^2.0.0",
-    "socket.io-client": "*"
+    "socket.io-client": "*",
+    "localstorage-memory": "*"
   },
   "babel": {
     "presets": [
