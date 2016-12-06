@@ -57,6 +57,7 @@ var webpackDevConfig = {
 		        loader: 'babel', // 'babel-loader' is also a legal name to reference
 		        query: {
 		          presets: ['react', 'es2015', 'stage-0'],
+				  plugins: ['transform-decorators-legacy']
 		          env: {
 		            development: {
 		              plugins: [
