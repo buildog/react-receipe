@@ -86,7 +86,7 @@
     "react-motion": "^0.4.3",
     "react-color": "^2.2.0",
     "mobx": "^2.2.2",
-    "mobx-react": "^3.1.0",
+    "mobx-react": "^3.1.0"
   },
   "babel": {
     "presets": [
