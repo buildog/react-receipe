@@ -64,7 +64,11 @@ var webpackServerSideConfig = {
 			{
 				test: /\.ico$/,
 				loader: "file-loader?name=[name].[ext]"
-			}
+			},
+			{
+		      test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/,
+		      loader: "url-loader?limit=100000"
+		    }
 		]
 	},
 	resolve: {

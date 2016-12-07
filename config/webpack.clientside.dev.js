@@ -110,7 +110,11 @@ var webpackDevConfig = {
 				//ICO Loader:
 				test: /\.ico$/,
 				loader: "file-loader?name=[name].[ext]"
-			}
+			},
+			{
+	      		test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/,
+	      		loader: "url-loader?limit=100000"
+	    	}
 		]
 	},
 	//resolve permet de spécifier les extensions par défault (i.e. les types de fichiers où il
