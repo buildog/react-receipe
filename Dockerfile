@@ -1,4 +1,4 @@
-FROM node:5-slim
+FROM node:6.9.1
 
 MAINTAINER Adrien Remacle <adrien@buildog.com>
 

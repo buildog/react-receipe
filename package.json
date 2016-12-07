@@ -71,11 +71,14 @@
     "fetch-plus-json": "3.6.0",
     "EventEmitter": "1.0.0",
     "url-loader": "^0.5.7",
+    "lodash": "^4.12.0",
+    "classnames": "^2.2.5",
     "moment": "^2.14.1",
     "seamless-immutable": "^6.1.0",
     "shortid": "^2.2.6",
+    "sinon": "^1.17.3",
     "spectacle": "^1.0.6",
-    "spectacle-editor-viewer": "0.1.5"    
+    "spectacle-editor-viewer": "0.1.5"
   },
   "dependencies": {
     "compression": "^1.6.1",
