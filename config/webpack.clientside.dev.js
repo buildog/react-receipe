@@ -83,17 +83,27 @@ var webpackDevConfig = {
 		        }
 		      },
 
-			{
-				//CSS Loader:
-				test: /\.css$/,
-		        loader: "style-loader!css-loader?modules&importLoaders=1!postcss-loader"
+			  {
+		        test: /\.global\.css$/,
+		        loaders: [
+		          "style-loader",
+		          "css-loader?sourceMap"
+		        ]
+		      },
 
-			},
+		      {
+		        test: /^((?!\.global).)*\.css$/,
+		        loaders: [
+		          "style-loader",
+		          "css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader"
+		        ]
+		      },
+
 			{
 				//Image loader:
 				//Le plugin file permet de chercher toutes les images et de les inclure dans output.path?name
 				//Pour plus de détails: https://github.com/webpack/file-loader/blob/master/README.md
-				test: /\.(jp[e]?g|png|gif|svg)$/i,
+				test: /\.(jp[e]?g|png|gif)$/i,
 				loader: "file-loader?name=img/[name].[ext]"
 				//loader:"file-loader?name=[path]/[name].[ext]"
 			},

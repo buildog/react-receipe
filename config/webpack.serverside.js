@@ -50,7 +50,7 @@ var webpackServerSideConfig = {
 				loader: ExtractTextPlugin.extract("style-loader","css-loader?modules&importLoaders=1!postcss-loader")
 			},
 			{
-				test: /\.(jp[e]?g|png|gif|svg)$/i,
+				test: /\.(jp[e]?g|png|gif)$/i,
 				loader: "file-loader?name=img/[name].[ext]"
 			},
 			{
