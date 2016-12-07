@@ -94,7 +94,7 @@ var webpackDevConfig = {
 				//Le plugin file permet de chercher toutes les images et de les inclure dans output.path?name
 				//Pour plus de détails: https://github.com/webpack/file-loader/blob/master/README.md
 				test: /\.(jp[e]?g|png|gif|svg)$/i,
-				loader: "file-loader"
+				loader: "file-loader?name=img/[name].[ext]"
 				//loader:"file-loader?name=[path]/[name].[ext]"
 			},
 			{
@@ -112,9 +112,16 @@ var webpackDevConfig = {
 				loader: "file-loader?name=[name].[ext]"
 			},
 			{
-	      		test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/,
+	      		test: /\.(woff|woff2|eot|ttf)$/,
 	      		loader: "url-loader?limit=100000"
-	    	}
+	    	},
+			{
+			  test: /.svg$/,
+			  loaders: [
+				"raw-loader",
+				"image-webpack-loader"
+			  ]
+			}
 		]
 	},
 	//resolve permet de spécifier les extensions par défault (i.e. les types de fichiers où il

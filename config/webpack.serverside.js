@@ -68,7 +68,14 @@ var webpackServerSideConfig = {
 			{
 		      test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/,
 		      loader: "url-loader?limit=100000"
-		    }
+			  },
+			  {
+				test: /.svg$/,
+				loaders: [
+				  "raw-loader",
+				  "image-webpack-loader"
+				]
+			  }
 		]
 	},
 	resolve: {
