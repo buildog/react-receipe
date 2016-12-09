@@ -19,8 +19,20 @@ var webpackDevConfig = {
 			//contient index.jsx donc automatiquement loadé lorsque l"on spécifie le dossier):
 			APP_DIR + "/client"
 		],
-		presentation: APP_DIR + "/presentation",
-		"slide-preview": APP_DIR + "/slide-preview"
+		presentation: [
+			"webpack-dev-server/client?http://"+HMR+":"+port, //WebpackDevServer host et port
+			"webpack/hot/only-dev-server", //"only" permet d"empêcher le rechargement lors d"erreurs de syntaxes
+			//fichier d"entrée principale de notre code source (client et non client.jsx comme le dossier
+			//contient index.jsx donc automatiquement loadé lorsque l"on spécifie le dossier):
+			APP_DIR + "/presentation"
+		]
+		"slide-preview": [
+			"webpack-dev-server/client?http://"+HMR+":"+port, //WebpackDevServer host et port
+			"webpack/hot/only-dev-server", //"only" permet d"empêcher le rechargement lors d"erreurs de syntaxes
+			//fichier d"entrée principale de notre code source (client et non client.jsx comme le dossier
+			//contient index.jsx donc automatiquement loadé lorsque l"on spécifie le dossier):			
+			APP_DIR + "/slide-preview"
+		]
 	},
 	//Inutile de spécifier target: "web" car par défault
 	//(web pour compiler pour une utilisation sur un environnement browser-like):
