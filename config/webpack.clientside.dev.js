@@ -11,7 +11,7 @@ const HMR = process.env.HMR || "0.0.0.0";
 var webpackDevConfig = {
 	//Fichier d"entrée où toutes les dépendances et ressources à inclure
 	//seront cherchées récursivement:
-	entry: [
+	entry: {
 		bundle: [
 			"webpack-dev-server/client?http://"+HMR+":"+port, //WebpackDevServer host et port
 			"webpack/hot/only-dev-server", //"only" permet d"empêcher le rechargement lors d"erreurs de syntaxes
@@ -21,7 +21,7 @@ var webpackDevConfig = {
 		],
 		presentation: APP_DIR + "/presentation",
 		"slide-preview": APP_DIR + "/slide-preview"
-	],
+	},
 	//Inutile de spécifier target: "web" car par défault
 	//(web pour compiler pour une utilisation sur un environnement browser-like):
 	//target: "web",
