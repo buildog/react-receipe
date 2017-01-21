@@ -91,15 +91,16 @@
     "feathers-socketio": "*",
     "githubhook": "^1.7.1",
     "localstorage-memory": "*",
-    "node-localstorage": "*",
     "medium-draft": "^0.4.0",
     "mobx": "^2.2.2",
     "mobx-react": "^3.1.0",
+    "node-localstorage": "*",
     "react": "^15.0.0-rc",
     "react-color": "^2.2.0",
     "react-dom": "^15.0.0-rc",
     "react-motion": "^0.4.3",
     "react-router": "^2.0.0",
+    "react-toggle": "^2.2.0",
     "socket.io-client": "*"
   }
 }
