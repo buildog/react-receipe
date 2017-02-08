@@ -99,6 +99,7 @@
     "react-addons-shallow-compare": "^15.4.2",
     "react-color": "^2.2.0",
     "react-dom": "^15.0.0-rc",
+    "react-dropzone": "^2.2.4",
     "react-dropzone-component": "^1.4.1",
     "react-html5video": "^1.4.0",
     "react-motion": "^0.4.3",
