@@ -158,15 +158,15 @@ var webpackDevConfig = {
 		   {
 			 host: HOST,
 			 port: PORT,
-			 proxy: PROXY
+			 proxy: PROXY,
+			 tunnel: true,
+			 open: false
 		   },
 		   // plugin options
 		   {
 			 // prevent BrowserSync from reloading the page
 			 // and let Webpack Dev Server take care of this
-			 reload: false,
-			 tunnel: true,
-			 open: false
+			 reload: false
 		   }
 		 ),
 		new webpack.HotModuleReplacementPlugin()
