@@ -1,6 +1,11 @@
 var webpack = require("webpack");
 //path permet de résoudre les chemins relatifs en absolus via __dirname et path.resolve notamment:
 var path = require("path");
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+const HOST = process.env.HOST || 'localhost';
+const PORT = process.env.PORT || 8080;
+const PROXY = `http://${HOST}:${PORT}`;
 
 var BUILD_DIR = path.resolve(__dirname, "..", "public");
 var APP_DIR = path.resolve(__dirname, "..", "src");
@@ -148,6 +153,20 @@ var webpackDevConfig = {
         return [require('autoprefixer'), require('precss')];
     },
 	plugins: [
+		new BrowserSyncPlugin(
+		   // BrowserSync options
+		   {
+			 host: HOST,
+			 port: PORT,
+			 proxy: PROXY
+		   },
+		   // plugin options
+		   {
+			 // prevent BrowserSync from reloading the page
+			 // and let Webpack Dev Server take care of this
+			 reload: false
+		   }
+		 ),
 		new webpack.HotModuleReplacementPlugin()
 	]
 };
