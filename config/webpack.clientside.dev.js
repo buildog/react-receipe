@@ -160,7 +160,8 @@ var webpackDevConfig = {
 			 port: PORT,
 			 proxy: PROXY,
 			 tunnel: true,
-			 open: false
+			 open: false,
+			 scrollElements: ['div','*', 'iframe']
 		   },
 		   // plugin options
 		   {
