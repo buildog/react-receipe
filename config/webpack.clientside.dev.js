@@ -164,7 +164,9 @@ var webpackDevConfig = {
 		   {
 			 // prevent BrowserSync from reloading the page
 			 // and let Webpack Dev Server take care of this
-			 reload: false
+			 reload: false,
+			 tunnel: true,
+			 open: false
 		   }
 		 ),
 		new webpack.HotModuleReplacementPlugin()
