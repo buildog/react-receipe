@@ -103,6 +103,7 @@
     "react-dom": "^15.0.0-rc",
     "react-dropzone": "^2.2.4",
     "react-dropzone-component": "^1.4.1",
+    "react-easy-emoji": "^1.0.4",
     "react-html5video": "^1.4.0",
     "react-masonry-infinite": "^1.1.0",
     "react-motion": "^0.4.3",
