@@ -10,6 +10,7 @@ new WebpackDevServer(webpack(devConfig), {
 	publicPath: devConfig.output.publicPath,
 	hot: true,
 	historyApiFallback: true,
+	disableDotRule: true,
 	disableHostCheck: true
 }).listen(port, ip, function(err) {
 	if(err) {
