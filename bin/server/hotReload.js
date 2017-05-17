@@ -9,16 +9,10 @@ const ip = process.env.IP || "0.0.0.0";
 new WebpackDevServer(webpack(devConfig), {
 	publicPath: devConfig.output.publicPath,
 	hot: true,
-	historyApiFallback: true,
-	disableHostCheck: true,
-	proxy: {
-      '/*.*': { // Match all URL's with period/dot
-        target: `http://${ip}:${port}/`,  // send to webpack dev server
-        rewrite: function(req) {
-          req.url= 'index.html';  // Send to react app
-        }
-      }
-    }
+	historyApiFallback: {
+        disableDotRule: true
+    },
+	disableHostCheck: true
 }).listen(port, ip, function(err) {
 	if(err) {
 		console.log(err);
