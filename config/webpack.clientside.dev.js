@@ -1,9 +1,9 @@
 var webpack = require("webpack");
 //path permet de résoudre les chemins relatifs en absolus via __dirname et path.resolve notamment:
 var path = require("path");
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
-const HOST = process.env.HOST || 'localhost';
+const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 8080;
 const PROXY = `http://${HOST}:${PORT}`;
 
@@ -43,8 +43,8 @@ var webpackDevConfig = {
 		publicPath: "/"
 	},
 	 watchOptions: {
-	    poll: 1000,
-	    aggregateTimeout: 1000
+	    										poll: 1000,
+	    										aggregateTimeout: 1000
 	},
 	module: {
 		//Pour plus de détails sur comment fonctionne la
@@ -57,64 +57,64 @@ var webpackDevConfig = {
 				//il doit être placé avant tous les autres loaders
 				//(cf. https://gaearon.github.io/react-hot-loader/getstarted/):
 				//(si plusieurs loaders, mettre loaders: [] au lieu de loader:)
-		        test: /\.jsx?$/,
-		        exclude: /(node_modules|bower_components)/,
-		        loader: 'babel', // 'babel-loader' is also a legal name to reference
-		        query: {
-		          presets: ['react', 'es2015', 'stage-0'],
-				  plugins: ['transform-decorators-legacy', 'transform-object-assign'],
-		          env: {
-		            development: {
-		              plugins: [
-		                [
-		                  'react-transform',
-		                  {
-		                    transforms: [{
-		                      transform: 'react-transform-hmr',
-		                      imports: ['react'],
-		                      locals: ['module']
+		        																				test: /\.jsx?$/,
+		        																				exclude: /(node_modules|bower_components)/,
+		        																				loader: "babel", // 'babel-loader' is also a legal name to reference
+		        																				query: {
+		          										presets: ["react", "es2015", "stage-0"],
+			plugins: ["transform-decorators-legacy", "transform-object-assign"],
+		          										env: {
+		            										development: {
+		              										plugins: [
+		                										[
+		                  																		"react-transform",
+		                  										{
+		                    																				transforms: [{
+		                      										transform: "react-transform-hmr",
+		                      										imports: ["react"],
+		                      										locals: ["module"]
 		                    }, {
-		                      transform: 'react-transform-catch-errors',
-		                      imports: [
-		                        "react",
-		                        "redbox-react"
+		                      										transform: "react-transform-catch-errors",
+		                      										imports: [
+		                        										"react",
+		                        										"redbox-react"
 		                      ]
 		                    }]
-		                  }
-		                ]
+		                  										}
+		                										]
 		              ]
 		            }
 		          }
 		        }
-		      },
+		      										},
 
 			  {
-		        test: /\.global\.css$/,
-		        loaders: [
-		          "style-loader",
-		          "css-loader?sourceMap"
+		        																				test: /\.global\.css$/,
+		        																				loaders: [
+		          										"style-loader",
+		          										"css-loader?sourceMap"
 		        ]
-		      },
+		      										},
 
-		      {
-		        test: /^((?!\.global).)*\.css$/,
-		        loaders: [
-		          "style-loader",
-		          "css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader"
+		      										{
+		        																				test: /^((?!\.global).)*\.css$/,
+		        																				loaders: [
+		          										"style-loader",
+		          										"css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader"
 		        ]
-		      },
+		      										},
 
 			{
 				//Image loader:
 				//Le plugin file permet de chercher toutes les images et de les inclure dans output.path?name
 				//Pour plus de détails: https://github.com/webpack/file-loader/blob/master/README.md
-				test: /\.(jp[e]?g|png|gif)$/i,
+				test: /\.(jp[e]?g|png|gif|svg)$/i,
 				loader: "file-loader?name=img/[name].[ext]"
 				//loader:"file-loader?name=[path]/[name].[ext]"
 			},
 			{
 				test: /\.mp4$/,
-				loader: 'file-loader?limit=10000&mimetype=video/mp4&name=videos/[name].[ext]'
+				loader: "file-loader?limit=10000&mimetype=video/mp4&name=videos/[name].[ext]"
 			},
 			{
 				//HTML Loader:
@@ -127,16 +127,16 @@ var webpackDevConfig = {
 				loader: "file-loader?name=[name].[ext]"
 			},
 			{
-	      		test: /\.(woff|woff2|eot|ttf)$/,
-	      		loader: "url-loader?limit=100000"
-	    	},
-			{
-			  test: /.svg$/,
-			  loaders: [
-				"raw-loader",
-				"image-webpack-loader"
-			  ]
-			}
+	      																																test: /\.(woff|woff2|eot|ttf)$/,
+	      																																loader: "url-loader?limit=100000"
+	    																					}
+			// ,{
+			//   test: /.svg$/,
+			//   loaders: [
+			// 	"raw-loader",
+			// 	"image-webpack-loader"
+			//   ]
+			// }
 		]
 	},
 	//resolve permet de spécifier les extensions par défault (i.e. les types de fichiers où il
@@ -148,26 +148,26 @@ var webpackDevConfig = {
 	resolve: {
 		extensions: ["", ".js", ".jsx"]
 	},
-    postcss: function () {
+    										postcss: function () {
     	// autoprefixer pour les différents browsers et precss permet un style type Sass
-        return [require('autoprefixer'), require('precss')];
+        										return [require("autoprefixer"), require("precss")];
     },
 	plugins: [
 		new BrowserSyncPlugin(
 		   // BrowserSync options
-		   {
-			 host: HOST,
-			 port: PORT,
-			 proxy: PROXY,
-			 tunnel: true,
-			 open: false
-		   },
+		   										{
+			 										host: HOST,
+			 										port: PORT,
+			 										proxy: PROXY,
+			 										tunnel: true,
+			 										open: false
+		   										},
 		   // plugin options
-		   {
+		   										{
 			 // prevent BrowserSync from reloading the page
 			 // and let Webpack Dev Server take care of this
-			 reload: false
-		   }
+			 										reload: false
+		   										}
 		 ),
 		new webpack.HotModuleReplacementPlugin()
 	]

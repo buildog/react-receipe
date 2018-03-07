@@ -50,12 +50,12 @@ var webpackServerSideConfig = {
 				loader: ExtractTextPlugin.extract("style-loader","css-loader?modules&importLoaders=1!postcss-loader")
 			},
 			{
-				test: /\.(jp[e]?g|png|gif)$/i,
+				test: /\.(jp[e]?g|png|gif|svg)$/i,
 				loader: "file-loader?name=img/[name].[ext]"
 			},
 			{
 				test: /\.mp4$/,
-	 			loader: 'file-loader?limit=10000&mimetype=video/mp4&name=videos/[name].[ext]'
+	 																																	loader: "file-loader?limit=10000&mimetype=video/mp4&name=videos/[name].[ext]"
 			},
 			{
 				test: /\.html$/,
@@ -66,23 +66,16 @@ var webpackServerSideConfig = {
 				loader: "file-loader?name=[name].[ext]"
 			},
 			{
-		      test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/,
-		      loader: "url-loader?limit=100000"
-			  },
-			  {
-				test: /.svg$/,
-				loaders: [
-				  "raw-loader",
-				  "image-webpack-loader"
-				]
+		      																				test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/,
+		      																				loader: "url-loader?limit=100000"
 			  }
 		]
 	},
 	resolve: {
 		extensions: ["", ".js", ".jsx"]
 	},
-    postcss: function () {
-        return [require('autoprefixer'), require('precss')];
+    										postcss: function () {
+        										return [require("autoprefixer"), require("precss")];
     },
 	plugins: [
 		new ExtractTextPlugin("all.bundle.css")
